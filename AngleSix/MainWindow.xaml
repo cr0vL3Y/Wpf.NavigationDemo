@@ -1,0 +1,21 @@
+﻿<Window x:Class="AngleSix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:AngleSix.Converters"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:AngleSix"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:AngleSix.ViewModels"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <converters:ApplicationPageViewConverter x:Key="ApplicationPageViewConverter" />
+    </Window.Resources>
+    <ContentControl Content="{Binding CurrentPage, Converter={StaticResource ApplicationPageViewConverter}}" />
+</Window>
